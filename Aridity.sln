@@ -7,23 +7,41 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeMedicine.Aridity", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aridity", "src\Aridity\Aridity.csproj", "{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{6EBE16A6-A249-4F6D-98CC-D44F4CC4CA6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6534FE7D-A60A-4441-9C94-2C535434842A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Debug|x64.ActiveCfg = Debug|x64
+		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Debug|x64.Build.0 = Debug|x64
 		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Release|x64.ActiveCfg = Release|x64
+		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1}.Release|x64.Build.0 = Release|x64
 		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Debug|x64.ActiveCfg = Debug|x64
+		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Debug|x64.Build.0 = Debug|x64
 		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Release|x64.ActiveCfg = Release|x64
+		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62BC600D-B763-4CC5-AC1B-17C0CC23F0B1} = {6534FE7D-A60A-4441-9C94-2C535434842A}
+		{E3CF19B1-000D-4CB8-9B8D-CDBA7083600B} = {6EBE16A6-A249-4F6D-98CC-D44F4CC4CA6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95669981-7B54-430E-A0C3-D33143BE1D78}

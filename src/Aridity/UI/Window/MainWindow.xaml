@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aridity"
         mc:Ignorable="d"
-        Title="Aridity" Height="510" Width="930" Initialized="Window_Initialized">
+        Title="Aridity" Height="510" Width="930" Initialized="Window_Initialized" Closing="Window_Closing" StateChanged="Window_StateChanged" IsVisibleChanged="Window_IsVisibleChanged">
     <Grid Background="#FFC3C3C3">
+        <Label x:Name="lblEOS" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFADADAD" Foreground="White"/>
         <TabControl Margin="18,0,0,16" SelectedIndex="1">
             <TabItem Header="TabItem">
                 <Grid Background="#FFE5E5E5">
                     <Image x:Name="gameImageBackground" Height="137" Margin="157,0,0,0" VerticalAlignment="Top" Width="620"/>
                     <Label x:Name="lblGameName" Content="Welcome!" HorizontalAlignment="Left" Margin="171,90,0,0" VerticalAlignment="Top" FontSize="22"/>
-                    <Button x:Name="btnInstallUpdateUninstallPlay" Content="Install" HorizontalAlignment="Left" Margin="171,134,0,0" VerticalAlignment="Top" Height="34" Width="72" RenderTransformOrigin="0.551,0.126"/>
+                    <Button x:Name="btnInstallUpdateUninstallPlay" Content="Install" HorizontalAlignment="Left" Margin="171,134,0,0" VerticalAlignment="Top" Height="34" Width="72" RenderTransformOrigin="0.551,0.126" Click="btnInstallUpdateUninstallPlay_Click"/>
                     <ProgressBar x:Name="installProgress" HorizontalAlignment="Left" Height="17" Margin="272,151,0,0" VerticalAlignment="Top" Width="206" Foreground="#FF06D8F3"/>
                     <Label x:Name="lblInstallStatus" Content="status&#xD;&#xA;" HorizontalAlignment="Left" Margin="272,129,0,0" VerticalAlignment="Top" Height="26" Width="221" FontSize="10"/>
+                    <Button x:Name="btnSettings" Content="Settings" HorizontalAlignment="Left" Margin="804,129,0,0" VerticalAlignment="Top" Width="72" Height="34" Click="btnSettings_Click"/>
                 </Grid>
             </TabItem>
+            
         </TabControl>
-        <ListBox x:Name="gameList" Background="#FFE2E2E2" HorizontalAlignment="Left" Width="176"/>
+        <ListBox x:Name="gameList" Background="#FFE2E2E2" HorizontalAlignment="Left" Width="176" SelectionChanged="gameList_SelectionChanged"/>
     </Grid>
 </Window>

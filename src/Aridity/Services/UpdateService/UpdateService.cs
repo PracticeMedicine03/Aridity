@@ -11,9 +11,13 @@ using System.Threading.Tasks;
 
 namespace Aridity.Services
 {
-    sealed class UpdateService : Service
+    sealed class UpdateService : Service, IUpdateService
     {
         public UpdateService() 
+        {
+        }
+
+        public void Run()
         {
             using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/PracticeMedicine03/aridity"))
             {
