@@ -25,6 +25,8 @@ namespace Aridity
             {
                 AllocConsole();
             }
+
+            StartupFunctions.Start();
         }
     }
 }

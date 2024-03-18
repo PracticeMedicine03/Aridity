@@ -39,10 +39,10 @@ namespace Aridity
             InitializeNotifyIcon("Aridity is been minimized. Click the tray icon to show the window again", "Aridity");
             InitializeRPC();
 
-            new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder()
-                                .AddText("Welcome to Aridity")
-                                .AddText("Aridity is an game manager mainly for SourceMods just like Adastral with the same style as Steam.")
-                                .Show();
+            //new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder()
+            //                    .AddText("Welcome to Aridity")
+            //                    .AddText("Aridity is an game manager mainly for SourceMods just like Adastral with the same style as Steam.")
+            //                    .Show();
 
             CreateListBoxItemsForAvailableGamesOrProjects();
 
@@ -62,8 +62,6 @@ namespace Aridity
 
                 Application.Current.Shutdown();
             }
-
-            StartupFunctions.Start();
         }
 
         private void InitializeRPC()
@@ -344,6 +342,20 @@ namespace Aridity
 
                 this.lblInstallStatus.Content = "Downloading... (no progress)";
                 this.installProgress.Value = 50;
+
+                try
+                {
+                    new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder()
+                    .AddProgressBar("Downloading Alternative Fortresses...", 1, false, "50", "Downloading...")
+                    .AddText("Aridity")
+                    .AddText("Aridity is downloading Alternative Fortresses")
+                    .Show();
+                }
+                catch(Exception)
+                {
+                    // do nothing
+                }
+
                 Installer.Install();
 
                 if (Git.error)
@@ -419,6 +431,19 @@ namespace Aridity
 
                 this.lblInstallStatus.Content = "Downloading... (no progress)";
                 this.installProgress.Value = 50;
+                try
+                {
+                    new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder()
+                    .AddProgressBar("Downloading Beta Fortress...", 1, false, "50", "Downloading...")
+                    .AddText("Aridity")
+                    .AddText("Aridity is downloading Beta Fortress")
+                    .Show();
+                }
+                catch(Exception)
+                {
+                    // do nothing
+                }
+
                 Installer.Install();
 
                 if (Git.error)

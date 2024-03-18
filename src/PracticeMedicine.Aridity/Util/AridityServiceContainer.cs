@@ -2,11 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeMedicine.Aridity.Sda
+namespace PracticeMedicine.Aridity.Util
 {
     public sealed class AridityServiceContainer : IServiceProvider, IServiceContainer, IDisposable
     {
@@ -110,6 +108,8 @@ namespace PracticeMedicine.Aridity.Sda
             {
                 services.Add(serviceType, serviceInstance);
                 OnServiceInitialized(serviceType, serviceInstance);
+
+                AridityF.Log.Info("[ ARIDITY SERVICE CONTAINER ] Initalized service: " + serviceType);
             }
         }
 

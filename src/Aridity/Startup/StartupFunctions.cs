@@ -1,14 +1,16 @@
 ﻿using System;
 using Aridity.Services;
 using PracticeMedicine.Aridity;
-using PracticeMedicine.Aridity.Sda;
+using PracticeMedicine.Aridity.Util;
 
 namespace Aridity
 {
-    internal class StartupFunctions
+    public class StartupFunctions
     {
         public static void Start()
         {
+            AridityF.Log.Warn("Starting up...");
+
             var container = new AridityServiceContainer();
             container.AddService(typeof(IUpdateService), new UpdateService());
         }

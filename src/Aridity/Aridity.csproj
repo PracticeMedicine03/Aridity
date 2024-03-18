@@ -108,6 +108,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Services\UpdateService\IUpdateService.cs" />
+    <Compile Include="Services\UpdateService\SquirrelUpdaterUpdateService.cs" />
     <Compile Include="Services\UpdateService\UpdateService.cs" />
     <Compile Include="Startup\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -187,9 +188,9 @@
     <Folder Include="UI\Core\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\record.ico">
+    <None Include="assets\record.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

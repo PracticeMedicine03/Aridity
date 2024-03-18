@@ -34,6 +34,15 @@ namespace Aridity
             currentGameID = gameID;
 
             this.Title = gameID.ToString() + " - Settings";
+            
+            if(Installer.IsGameDirectoryExists(gameID))
+            {
+                using (StreamReader sw = new StreamReader($"./cfg/{gameID}/config"))
+                {
+                    this.argTextBox.Text = sw.ReadLine();
+                    sw.Close();
+                }
+            }
         }
 
         private void Window_Initialized(object sender, EventArgs e)
