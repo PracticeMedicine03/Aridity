@@ -7,7 +7,7 @@ namespace Aridity.Services
         FallbackImplementation = typeof(FallbackUpdateService))]
     public interface IUpdateService
     {
-        void Run();
+        void CheckForUpdates();
     }
 
     sealed class FallbackUpdateService : SquirrelUpdaterUpdateService

@@ -21,12 +21,20 @@ namespace Aridity
         {
             base.OnStartup(e);
 
-            if(e.Args.Contains("--console"))
-            {
-                AllocConsole();
-            }
+            //if(e.Args.Contains("--console"))
+            //{
+            //    AllocConsole();
+            //}
 
             StartupFunctions.Start();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+
+            ConsoleWindow console = new ConsoleWindow();
+            console.Close();
         }
     }
 }

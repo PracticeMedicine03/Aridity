@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using PracticeMedicine.Aridity;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Aridity
 {
@@ -30,6 +21,10 @@ namespace Aridity
         public Settings(int gameID)
         {
             InitializeComponent();
+
+            AridityF.Log.InfoFormatted(
+                "[ ARIDITY GUI ] Shown the Settings window with an gameID parameter of {0}", 
+                gameID);
 
             currentGameID = gameID;
 

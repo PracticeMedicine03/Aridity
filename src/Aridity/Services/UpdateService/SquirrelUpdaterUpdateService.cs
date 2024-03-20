@@ -10,7 +10,7 @@ namespace Aridity.Services
     {
         public SquirrelUpdaterUpdateService() { }
 
-        public void Run()
+        public void CheckForUpdates()
         {
             using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/PracticeMedicine03/aridity"))
             {

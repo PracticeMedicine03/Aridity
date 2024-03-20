@@ -29,6 +29,8 @@ namespace Aridity
 
         private DiscordRpcClient client;
 
+        string[] args = Environment.GetCommandLineArgs();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +39,11 @@ namespace Aridity
         private void Window_Initialized(object sender, EventArgs e)
         {
             InitializeNotifyIcon("Aridity is been minimized. Click the tray icon to show the window again", "Aridity");
-            InitializeRPC();
+            
+            if(!args.Contains("--disable-discord"))
+            {
+                InitializeRPC();
+            }
 
             //new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder()
             //                    .AddText("Welcome to Aridity")
@@ -50,6 +56,15 @@ namespace Aridity
             this.installProgress.Visibility = Visibility.Hidden;
 
             this.installProgress.Foreground = new SolidColorBrush(Color.FromRgb(6, 216, 243));
+
+            if(args.Contains("--console") || args.Contains("--developer"))
+            {
+                this.btnShowDevConsole.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.btnShowDevConsole.Visibility = Visibility.Hidden;
+            }
 
             this.btnInstallUpdateUninstallPlay.IsEnabled = false;
             this.btnSettings.IsEnabled = false;
@@ -229,7 +244,10 @@ namespace Aridity
             {
                 currentGameID = 4360;
 
-                UpdateRPC("Alternative Fortresses", "Not playing", "aridityLarge", "ariditySmall-af", null, "Alternative Fortresses");
+                if(!args.Contains("--disable-discord"))
+                {
+                    UpdateRPC("Alternative Fortresses", "Not playing", "aridityLarge", "ariditySmall-af", null, "Alternative Fortresses");
+                }
 
                 if (Installer.IsGameDirectoryExists(currentGameID))
                 {
@@ -246,7 +264,10 @@ namespace Aridity
             {
                 currentGameID = 4310;
 
-                UpdateRPC("Beta Fortress", "Not playing", "aridityLarge", "ariditySmall-bf", null, "Beta Fortress");
+                if(!args.Contains("--disable-discord"))
+                {
+                    UpdateRPC("Beta Fortress", "Not playing", "aridityLarge", "ariditySmall-bf", null, "Beta Fortress");
+                }
 
                 if (Installer.IsGameDirectoryExists(currentGameID))
                 {
@@ -263,7 +284,10 @@ namespace Aridity
             {
                 currentGameID = 2350;
 
-                UpdateRPC("Pre-Fortress 2", "Not playing", "aridityLarge", "ariditySmall-af", null, "Pre-Fortress 2");
+                if(!args.Contains("--disable-discord"))
+                {
+                    UpdateRPC("Pre-Fortress 2", "Not playing", "aridityLarge", "ariditySmall-af", null, "Pre-Fortress 2");
+                }
 
                 if (Installer.IsGameDirectoryExists(currentGameID))
                 {
@@ -507,6 +531,7 @@ namespace Aridity
                 this.lblInstallStatus.Content = "Ready!";
 
                 this.btnInstallUpdateUninstallPlay.IsEnabled = false;
+                this.gameList.IsEnabled = false;
 
                 this.installProgress.IsIndeterminate = true;
 
@@ -535,7 +560,16 @@ namespace Aridity
                     this.btnInstallUpdateUninstallPlay.Content = "Install";
                 }
 
+                this.installProgress.Value = 100;
+
+                this.btnInstallUpdateUninstallPlay.Content = "Play";
+
                 this.btnInstallUpdateUninstallPlay.IsEnabled = true;
+
+                this.gameList.IsEnabled = true;
+
+                this.lblInstallStatus.Visibility = Visibility.Hidden;
+                this.installProgress.Visibility = Visibility.Hidden;
             }
         }
 
@@ -566,6 +600,24 @@ namespace Aridity
         private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             CheckTrayIcon();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnShowDevConsole_Click(object sender, RoutedEventArgs e)
+        {
+            if(!StartupFunctions.IsConsoleAlreadyOpened)
+            {
+                ConsoleWindow console = new ConsoleWindow();
+                console.Show();
+            }
+            else
+            {
+
+            }
         }
     }
 }

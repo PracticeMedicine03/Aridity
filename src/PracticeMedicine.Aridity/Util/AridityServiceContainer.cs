@@ -109,7 +109,7 @@ namespace PracticeMedicine.Aridity.Util
                 services.Add(serviceType, serviceInstance);
                 OnServiceInitialized(serviceType, serviceInstance);
 
-                AridityF.Log.Info("[ ARIDITY SERVICE CONTAINER ] Initalized service: " + serviceType);
+                AridityF.Log.Info("[ ARIDITY SERVICE CONTAINER ] Initalized service: " + serviceType + " - Service Instance: " + serviceInstance);
             }
         }
 
