@@ -17,7 +17,6 @@
                     <ProgressBar x:Name="installProgress" HorizontalAlignment="Left" Height="17" Margin="272,151,0,0" VerticalAlignment="Top" Width="206" Foreground="#FF06D8F3"/>
                     <Label x:Name="lblInstallStatus" Content="status&#xD;&#xA;" HorizontalAlignment="Left" Margin="272,129,0,0" VerticalAlignment="Top" Height="26" Width="221" FontSize="10"/>
                     <Button x:Name="btnSettings" Content="Settings" HorizontalAlignment="Left" Margin="804,129,0,0" VerticalAlignment="Top" Width="72" Height="34" Click="btnSettings_Click"/>
-                    <Button x:Name="btnShowDevConsole" Content="Developer Console" HorizontalAlignment="Left" Margin="171,195,0,0" VerticalAlignment="Top" Width="117" Click="btnShowDevConsole_Click"/>
                 </Grid>
             </TabItem>
 

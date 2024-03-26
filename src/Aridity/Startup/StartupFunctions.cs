@@ -16,8 +16,6 @@ namespace Aridity
         {
             if(args.Contains("--console"))
             {
-                ConsoleWindow console = new ConsoleWindow();
-                console.Show();
             }
 
             AridityF.Log.Warn("Starting up...");

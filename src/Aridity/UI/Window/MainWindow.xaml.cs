@@ -606,18 +606,5 @@ namespace Aridity
         {
             Application.Current.Shutdown();
         }
-
-        private void btnShowDevConsole_Click(object sender, RoutedEventArgs e)
-        {
-            if(!StartupFunctions.IsConsoleAlreadyOpened)
-            {
-                ConsoleWindow console = new ConsoleWindow();
-                console.Show();
-            }
-            else
-            {
-
-            }
-        }
     }
 }
